@@ -313,7 +313,7 @@ a:hover { color: var(--primary-dark); }
             rgba(30, 58, 138, 0.75) 50%, /* #1e3a8a - Transisi warna di tengah */
             rgba(26, 86, 219, 0.60) 100% /* #1a56db - Sedikit lebih terang di sudut kanan bawah */
         ),
-        url('../img/image.png');
+        url('../img/Background.png');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 6rem 0 4rem;
