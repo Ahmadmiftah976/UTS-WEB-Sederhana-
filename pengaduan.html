@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengaduan – LaporKi' Sistem Pengaduan Masyarakat</title>
+  <meta name="description" content="Buat laporan pengaduan baru dan pantau riwayat laporan Anda di LaporKi'." />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon"><i class="bi bi-megaphone-fill"></i></div>
+      LaporKi'
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link active" href="pengaduan.html">Pengaduan</a></li>
+        <li class="nav-item ms-lg-2">
+          <a href="login.html" class="btn-outline-custom" style="padding:.5rem 1.1rem;font-size:.85rem;">
+            <i class="bi bi-box-arrow-right"></i> Keluar
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== PAGE HEADER ========== -->
+<section class="page-header">
+  <div class="container">
+    <div class="d-flex align-items-center gap-2 mb-2" style="color:rgba(255,255,255,.6);font-size:.85rem;">
+      <a href="index.html" style="color:rgba(255,255,255,.6);">Beranda</a>
+      <i class="bi bi-chevron-right" style="font-size:.7rem;"></i>
+      <span style="color:white;">Pengaduan</span>
+    </div>
+    <h1>Halaman Pengaduan</h1>
+    <p>Sampaikan laporan Anda dan pantau status tindak lanjut dari petugas.</p>
+  </div>
+</section>
+
+<!-- ========== MAIN CONTENT ========== -->
+<div class="container" style="padding-top:2.5rem;padding-bottom:3.5rem;">
+  <div class="row g-4">
+
+    <!-- ===== FORM PENGADUAN ===== -->
+    <div class="col-lg-5">
+      <div class="card-custom" style="position:sticky;top:90px;">
+        <div class="d-flex align-items-center gap-2 mb-4">
+          <div style="width:40px;height:40px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">
+            <i class="bi bi-plus-lg"></i>
+          </div>
+          <div>
+            <h2 style="font-size:1.1rem;margin:0;">Buat Laporan Baru</h2>
+            <p style="font-size:.8rem;margin:0;">Isi semua kolom yang tersedia</p>
+          </div>
+        </div>
+
+        <form id="formPengaduan" novalidate>
+          <!-- Nama -->
+          <div class="mb-3">
+            <label class="form-label-custom" for="inputNama">
+              <i class="bi bi-person me-1" style="color:var(--primary);"></i> Nama Lengkap
+            </label>
+            <input type="text" class="form-control-custom" id="inputNama" placeholder="Masukkan nama lengkap Anda" />
+            <div class="invalid-feedback-custom" id="errNama">Nama tidak boleh kosong.</div>
+          </div>
+
+          <!-- Kategori -->
+          <div class="mb-3">
+            <label class="form-label-custom" for="selectKategori">
+              <i class="bi bi-tag me-1" style="color:var(--primary);"></i> Kategori Laporan
+            </label>
+            <select class="form-select-custom" id="selectKategori">
+              <option value="">-- Pilih Kategori --</option>
+              <option value="Infrastruktur">🛣️ Infrastruktur (Jalan, Jembatan)</option>
+              <option value="Lingkungan">🌿 Lingkungan (Sampah, Drainase)</option>
+              <option value="Penerangan">💡 Penerangan (Lampu Jalan)</option>
+              <option value="Keamanan">🛡️ Keamanan &amp; Ketertiban</option>
+              <option value="Kesehatan">🏥 Kesehatan Masyarakat</option>
+              <option value="Pelayanan Publik">🏛️ Pelayanan Publik</option>
+              <option value="Lainnya">📋 Lainnya</option>
+            </select>
+            <div class="invalid-feedback-custom" id="errKategori">Pilih kategori laporan.</div>
+          </div>
+
+          <!-- Lokasi -->
+          <div class="mb-3">
+            <label class="form-label-custom" for="inputLokasi">
+              <i class="bi bi-geo-alt me-1" style="color:var(--primary);"></i> Lokasi Kejadian
+            </label>
+            <input type="text" class="form-control-custom" id="inputLokasi"
+                   placeholder="Contoh: Jl. Merdeka No.5, RT 03/RW 02" />
+            <div class="invalid-feedback-custom" id="errLokasi">Lokasi tidak boleh kosong.</div>
+          </div>
+
+          <!-- Deskripsi -->
+          <div class="mb-3">
+            <label class="form-label-custom" for="inputDeskripsi">
+              <i class="bi bi-card-text me-1" style="color:var(--primary);"></i> Deskripsi Masalah
+            </label>
+            <textarea class="form-control-custom" id="inputDeskripsi" rows="4"
+                      placeholder="Jelaskan masalah secara detail: kondisi, dampak, dan harapan tindak lanjut..." style="resize:vertical;"></textarea>
+            <div class="d-flex justify-content-between">
+              <div class="invalid-feedback-custom" id="errDeskripsi" style="display:inline;">Deskripsi minimal 20 karakter.</div>
+              <div class="form-text-hint ms-auto"><span id="charCount">0</span>/500</div>
+            </div>
+          </div>
+
+          <!-- Upload Foto -->
+          <div class="mb-4">
+            <label class="form-label-custom">
+              <i class="bi bi-image me-1" style="color:var(--primary);"></i> Foto Bukti <span style="color:var(--text-light);font-weight:400;">(Opsional)</span>
+            </label>
+            <div class="upload-area" id="uploadArea" onclick="$('#inputFoto').click()">
+              <i class="bi bi-cloud-upload"></i>
+              <p style="color:var(--text-muted);margin:.35rem 0 0;">Klik atau seret foto ke sini</p>
+              <p style="font-size:.75rem;color:var(--text-light);margin:.2rem 0 0;">JPG, PNG, WEBP · Maks 5 MB</p>
+            </div>
+            <input type="file" id="inputFoto" accept="image/*" style="display:none;" />
+            <div id="previewFoto" style="display:none;margin-top:.75rem;">
+              <img id="imgPreview" src="" alt="Preview foto" style="width:100%;border-radius:8px;max-height:180px;object-fit:cover;" />
+              <button type="button" onclick="clearFoto()" style="margin-top:.4rem;background:none;border:none;color:var(--danger);font-size:.8rem;cursor:pointer;">
+                <i class="bi bi-x-circle me-1"></i>Hapus foto
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary-custom w-100 justify-content-center" id="btnKirim"
+                  style="padding:.8rem;font-size:.95rem;">
+            <i class="bi bi-send-fill"></i>
+            <span id="btnKirimText">Kirim Laporan</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== RIWAYAT LAPORAN ===== -->
+    <div class="col-lg-7">
+      <div class="card-custom">
+        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+          <div class="d-flex align-items-center gap-2">
+            <div style="width:40px;height:40px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <div>
+              <h2 style="font-size:1.1rem;margin:0;">Riwayat Laporan Saya</h2>
+              <p style="font-size:.8rem;margin:0;">Pantau status terkini laporan Anda</p>
+            </div>
+          </div>
+          <!-- Filter -->
+          <select class="form-select-custom" id="filterStatus" style="width:auto;padding:.5rem .9rem;font-size:.85rem;">
+            <option value="semua">Semua Status</option>
+            <option value="Menunggu">Menunggu</option>
+            <option value="Diproses">Diproses</option>
+            <option value="Selesai">Selesai</option>
+            <option value="Ditolak">Ditolak</option>
+          </select>
+        </div>
+
+        <!-- Search -->
+        <div class="mb-3" style="position:relative;">
+          <i class="bi bi-search" style="position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--text-light);"></i>
+          <input type="text" class="form-control-custom" id="searchLaporan"
+                 placeholder="Cari laporan berdasarkan nomor atau kategori..."
+                 style="padding-left:2.5rem;" />
+        </div>
+
+        <!-- Table -->
+        <div style="overflow-x:auto;">
+          <table class="table-custom w-100" id="tabelRiwayat">
+            <thead>
+              <tr>
+                <th>No. Laporan</th>
+                <th>Tanggal</th>
+                <th>Kategori</th>
+                <th>Lokasi</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="bodyRiwayat">
+              <!-- Diisi via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" style="display:none;text-align:center;padding:3rem 1rem;">
+          <div style="font-size:3rem;color:var(--text-light);margin-bottom:.75rem;">📭</div>
+          <h3 style="font-size:1rem;color:var(--text-muted);">Tidak ada laporan ditemukan</h3>
+          <p style="font-size:.85rem;color:var(--text-light);">Buat laporan pertama Anda sekarang.</p>
+        </div>
+
+        <div class="mt-3 d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <p style="font-size:.82rem;color:var(--text-light);margin:0;" id="infoJumlah"></p>
+          <div class="d-flex gap-2" id="paginasiContainer"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Detail Laporan -->
+<div class="modal fade" id="modalDetail" tabindex="-1" aria-labelledby="modalDetailLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:var(--radius);border:none;box-shadow:var(--shadow-lg);">
+      <div class="modal-header" style="border-bottom:1px solid var(--border);padding:1.25rem 1.5rem;">
+        <h5 class="modal-title" id="modalDetailLabel" style="font-weight:700;">Detail Laporan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" style="padding:1.5rem;" id="modalDetailBody">
+        <!-- Diisi via JS -->
+      </div>
+      <div class="modal-footer" style="border-top:1px solid var(--border);padding:1rem 1.5rem;">
+        <button type="button" class="btn-outline-custom" data-bs-dismiss="modal" style="padding:.5rem 1.25rem;font-size:.875rem;">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container-custom" id="toastContainer"></div>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" style="margin-top:2rem;">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;padding:1rem 0;margin:0;">
+      &copy; 2024 LaporKi' &mdash; Sistem Pengaduan Masyarakat Digital.
+      <a href="index.html" class="ms-2">Beranda</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/pengaduan.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaporKi' – Sistem Pengaduan Masyarakat Digital</title>
+  <meta name="description" content="LaporKi' adalah platform pengaduan masyarakat digital yang memudahkan warga melaporkan masalah dan memantau tindak lanjut secara transparan." />
+
+  <!-- Bootstrap 5.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon"><i class="bi bi-megaphone-fill"></i></div>
+      LaporKi'
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cara-melapor">Cara Melapor</a></li>
+        <li class="nav-item"><a class="nav-link" href="#statistik">Statistik</a></li>
+        <li class="nav-item ms-lg-2">
+          <a href="login.html" class="btn-primary-custom" id="btnNavLogin">
+            <i class="bi bi-box-arrow-in-right"></i> Masuk
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero-section" id="beranda">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="hero-badge">
+          <i class="bi bi-patch-check-fill"></i> Platform Pengaduan Resmi
+        </div>
+        <h1>Suarakan Masalahmu, <span>Kami Tindaklanjuti</span></h1>
+        <p>LaporKi' hadir sebagai jembatan digital antara warga dan pemerintah. Laporkan masalah di sekitarmu dengan mudah, cepat, dan transparan.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="login.html" class="btn-primary-custom" id="btnHeroCTA">
+            <i class="bi bi-send-fill"></i> Buat Laporan Sekarang
+          </a>
+          <a href="#cara-melapor" class="btn-outline-custom" style="border-color:rgba(255,255,255,.4);color:white !important;">
+            <i class="bi bi-play-circle"></i> Cara Melapor
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-img-wrap p-4">
+          <div class="row g-3">
+            <div class="col-12">
+              <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:1rem;">
+                <div style="width:44px;height:44px;background:linear-gradient(135deg,#16a34a,#22c55e);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;flex-shrink:0;">
+                  <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <div>
+                  <div style="color:white;font-weight:600;font-size:.9rem;">Laporan #LK-2024-089</div>
+                  <div style="color:#93c5fd;font-size:.8rem;">Jalan Rusak – Jl. Merdeka No.12 · <span style="color:#86efac;">Selesai</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:1rem;">
+                <div style="width:44px;height:44px;background:linear-gradient(135deg,#1a56db,#3b82f6);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;flex-shrink:0;">
+                  <i class="bi bi-arrow-repeat"></i>
+                </div>
+                <div>
+                  <div style="color:white;font-weight:600;font-size:.9rem;">Laporan #LK-2024-092</div>
+                  <div style="color:#93c5fd;font-size:.8rem;">Lampu Jalan Mati – RT 05 · <span style="color:#93c5fd;">Diproses</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:1rem;">
+                <div style="width:44px;height:44px;background:linear-gradient(135deg,#d97706,#f59e0b);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;flex-shrink:0;">
+                  <i class="bi bi-hourglass-split"></i>
+                </div>
+                <div>
+                  <div style="color:white;font-weight:600;font-size:.9rem;">Laporan #LK-2024-095</div>
+                  <div style="color:#93c5fd;font-size:.8rem;">Sampah Menumpuk – Pasar Lama · <span style="color:#fcd34d;">Menunggu</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATISTIK ========== -->
+<section class="section-py bg-white" id="statistik">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <div class="section-badge">Statistik Pengaduan</div>
+      <h2 class="section-title">Data Laporan Masyarakat</h2>
+      <p class="section-subtitle mx-auto">Transparansi adalah prioritas kami. Berikut rekap laporan yang masuk ke sistem LaporKi'.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3 fade-up">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#f3e8ff;">
+            <i class="bi bi-file-earmark-text" style="color:#7c3aed;"></i>
+          </div>
+          <div class="stat-value" id="countTotal">0</div>
+          <div class="stat-label">Total Laporan Masuk</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 fade-up">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#dcfce7;">
+            <i class="bi bi-check2-all" style="color:#16a34a;"></i>
+          </div>
+          <div class="stat-value" id="countSelesai">0</div>
+          <div class="stat-label">Laporan Diselesaikan</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 fade-up">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#dbeafe;">
+            <i class="bi bi-arrow-repeat" style="color:#1a56db;"></i>
+          </div>
+          <div class="stat-value" id="countProses">0</div>
+          <div class="stat-label">Sedang Diproses</div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 fade-up">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#f0fdf4;">
+            <i class="bi bi-people" style="color:#16a34a;"></i>
+          </div>
+          <div class="stat-value" id="countPelapor">0</div>
+          <div class="stat-label">Warga Terdaftar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CARA MELAPOR ========== -->
+<section class="section-py" id="cara-melapor" style="background:var(--bg);">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 fade-up">
+        <div class="section-badge">Panduan Cepat</div>
+        <h2 class="section-title">Cara Melapor di LaporKi'</h2>
+        <p class="section-subtitle">Proses pengaduan dibuat sesederhana mungkin agar siapa pun dapat melakukannya.</p>
+      </div>
+      <div class="col-lg-7">
+        <div class="d-flex flex-column gap-3">
+          <div class="step-item fade-up">
+            <div class="step-num">1</div>
+            <div>
+              <h3 style="font-size:1rem;margin-bottom:.35rem;">Daftar & Masuk Akun</h3>
+              <p style="font-size:.875rem;margin:0;">Buat akun menggunakan email aktif. Proses pendaftaran hanya membutuhkan waktu kurang dari 2 menit.</p>
+            </div>
+          </div>
+          <div class="step-item fade-up">
+            <div class="step-num">2</div>
+            <div>
+              <h3 style="font-size:1rem;margin-bottom:.35rem;">Isi Formulir Pengaduan</h3>
+              <p style="font-size:.875rem;margin:0;">Pilih kategori, tuliskan lokasi dan deskripsi masalah. Tambahkan foto sebagai bukti pendukung (opsional).</p>
+            </div>
+          </div>
+          <div class="step-item fade-up">
+            <div class="step-num">3</div>
+            <div>
+              <h3 style="font-size:1rem;margin-bottom:.35rem;">Pantau Status Laporan</h3>
+              <p style="font-size:.875rem;margin:0;">Lacak perkembangan laporan Anda secara real-time di halaman riwayat. Status diperbarui oleh admin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== KATEGORI ========== -->
+<section class="section-py bg-white">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <div class="section-badge">Kategori Laporan</div>
+      <h2 class="section-title">Apa yang Bisa Dilaporkan?</h2>
+      <p class="section-subtitle mx-auto">LaporKi' menerima berbagai jenis pengaduan masyarakat di lingkungan Anda.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2 fade-up">
+        <div class="card-custom text-center" style="padding:1.5rem 1rem;">
+          <div style="width:52px;height:52px;background:#dbeafe;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.4rem;color:#1a56db;">
+            <i class="bi bi-cone-striped"></i>
+          </div>
+          <div style="font-weight:600;font-size:.85rem;color:var(--text);">Infrastruktur</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-up">
+        <div class="card-custom text-center" style="padding:1.5rem 1rem;">
+          <div style="width:52px;height:52px;background:#dcfce7;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.4rem;color:#16a34a;">
+            <i class="bi bi-tree"></i>
+          </div>
+          <div style="font-weight:600;font-size:.85rem;color:var(--text);">Lingkungan</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-up">
+        <div class="card-custom text-center" style="padding:1.5rem 1rem;">
+          <div style="width:52px;height:52px;background:#fef9c3;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.4rem;color:#d97706;">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+          <div style="font-weight:600;font-size:.85rem;color:var(--text);">Penerangan</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-up">
+        <div class="card-custom text-center" style="padding:1.5rem 1rem;">
+          <div style="width:52px;height:52px;background:#f3e8ff;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.4rem;color:#7c3aed;">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <div style="font-weight:600;font-size:.85rem;color:var(--text);">Keamanan</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-up">
+        <div class="card-custom text-center" style="padding:1.5rem 1rem;">
+          <div style="width:52px;height:52px;background:#ffe4e6;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.4rem;color:#e11d48;">
+            <i class="bi bi-hospital"></i>
+          </div>
+          <div style="font-weight:600;font-size:.85rem;color:var(--text);">Kesehatan</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-up">
+        <div class="card-custom text-center" style="padding:1.5rem 1rem;">
+          <div style="width:52px;height:52px;background:#e0f2fe;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.4rem;color:#0891b2;">
+            <i class="bi bi-three-dots"></i>
+          </div>
+          <div style="font-weight:600;font-size:.85rem;color:var(--text);">Lainnya</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BANNER ========== -->
+<section style="background:linear-gradient(135deg,#0f172a,#1e3a8a);padding:4rem 0;">
+  <div class="container text-center fade-up">
+    <h2 style="color:white;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:1rem;">Siap Membuat Laporan?</h2>
+    <p style="color:#cbd5e1;margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto;">
+      Bergabunglah dengan ribuan warga yang telah mempercayakan aspirasinya kepada LaporKi'.
+    </p>
+    <a href="login.html" class="btn-primary-custom" id="btnCTABanner" style="font-size:1rem;padding:.8rem 2rem;">
+      <i class="bi bi-send-fill"></i> Mulai Melapor Sekarang
+    </a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div style="width:36px;height:36px;background:linear-gradient(135deg,#1a56db,#0ea5e9);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;">
+            <i class="bi bi-megaphone-fill"></i>
+          </div>
+          <h5 class="mb-0" style="color:white;">LaporKi'</h5>
+        </div>
+        <p style="font-size:.875rem;line-height:1.7;">
+          Platform pengaduan masyarakat digital yang transparan, mudah digunakan, dan berorientasi pada tindak lanjut nyata.
+        </p>
+      </div>
+      <div class="col-sm-6 col-lg-2 offset-lg-1">
+        <h5>Navigasi</h5>
+        <ul class="list-unstyled" style="font-size:.875rem;">
+          <li class="mb-2"><a href="index.html">Beranda</a></li>
+          <li class="mb-2"><a href="#cara-melapor">Cara Melapor</a></li>
+          <li class="mb-2"><a href="#statistik">Statistik</a></li>
+          <li class="mb-2"><a href="login.html">Masuk</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <h5>Layanan</h5>
+        <ul class="list-unstyled" style="font-size:.875rem;">
+          <li class="mb-2"><a href="login.html">Buat Laporan</a></li>
+          <li class="mb-2"><a href="login.html">Riwayat Laporan</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5>Kontak</h5>
+        <ul class="list-unstyled" style="font-size:.875rem;">
+          <li class="mb-2 d-flex align-items-center gap-2">
+            <i class="bi bi-envelope" style="color:#1a56db;"></i>
+            <span>info@laporki.id</span>
+          </li>
+          <li class="mb-2 d-flex align-items-center gap-2">
+            <i class="bi bi-telephone" style="color:#1a56db;"></i>
+            <span>(021) 1234-5678</span>
+          </li>
+          <li class="mb-2 d-flex align-items-center gap-2">
+            <i class="bi bi-geo-alt" style="color:#1a56db;"></i>
+            <span>Jl. Pelayanan Publik No.1</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 LaporKi' &mdash; Sistem Pengaduan Masyarakat Digital. Dibuat untuk kepentingan publik.
+    </div>
+  </div>
+</footer>
+
+<!-- Toast Container -->
+<div class="toast-container-custom" id="toastContainer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
